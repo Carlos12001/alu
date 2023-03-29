@@ -7,12 +7,6 @@ componentes del sistema y se encarga de la lógica de control del
 sistema. El módulo tiene varios puertos de entrada y salida, como se
 describe a continuación:
 
-- clk: este puerto de entrada es el reloj del sistema y se utiliza
-    para sincronizar todas las operaciones del sistema.
-
-- reset: este puerto de entrada se utiliza para reiniciar el sistema
-    y devolverlo a su estado inicial.
-
 - change_switches: este puerto de entrada se utiliza para cambiar la
     configuración de los interruptores de entrada del sistema.
 
