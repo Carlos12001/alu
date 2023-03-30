@@ -11,35 +11,15 @@ module top_module(
     output logic [3:0] leds_result,
     output logic [3:0] leds_flags
 );
+	 
+	// Instancia de la ALU
+	alu #(4) dut(.a(a), .b(b), .uc(uc), .result(leds_result), 
+                .n(leds_flags[3]),
+					 .z(leds_flags[2]),
+					 .c(leds_flags[1]),
+					 .v(leds_flags[0]));
 
-    parameter WIDTH = 4;
-
-    logic [WIDTH-1:0] sync_a;
-    logic [WIDTH-1:0] sync_b;
-    logic [3:0] sync_uc;
-    logic [WIDTH-1:0] result;
-    logic [3:0] flags;
-
-    input_synchronizer #(.WIDTH(WIDTH)) synchronizer_a (
-        .clk(clk),
-        .reset(reset),
-        .d(a),
-        .q(sync_a)
-    );
-
-    input_synchronizer #(.WIDTH(WIDTH)) synchronizer_b (
-        .clk(clk),
-        .reset(reset),
-        .d(b),
-        .q(sync_b)
-    );
-
-    input_synchronizer #(.WIDTH(WIDTH)) synchronizer_uc (
-        .clk(clk),
-        .reset(reset),
-        .d(uc),
-        .q(sync_uc)
-    );
+    
 
     // Resto del código...
 endmodule
