@@ -61,7 +61,51 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AE26 -to display_units[6]
+set_location_assignment PIN_AE27 -to display_units[5]
+set_location_assignment PIN_AE28 -to display_units[4]
+set_location_assignment PIN_AG27 -to display_units[3]
+set_location_assignment PIN_AF28 -to display_units[2]
+set_location_assignment PIN_AG28 -to display_units[1]
+set_location_assignment PIN_AH28 -to display_units[0]
+set_location_assignment PIN_AJ29 -to display_tens[6]
+set_location_assignment PIN_AH29 -to display_tens[5]
+set_location_assignment PIN_AH30 -to display_tens[4]
+set_location_assignment PIN_AG30 -to display_tens[3]
+set_location_assignment PIN_AF29 -to display_tens[2]
+set_location_assignment PIN_AF30 -to display_tens[1]
+set_location_assignment PIN_AD27 -to display_tens[0]
+set_location_assignment PIN_AB23 -to display_sign[6]
+set_location_assignment PIN_AE29 -to display_sign[5]
+set_location_assignment PIN_AD29 -to display_sign[4]
+set_location_assignment PIN_AC28 -to display_sign[3]
+set_location_assignment PIN_AD30 -to display_sign[2]
+set_location_assignment PIN_AC29 -to display_sign[1]
+set_location_assignment PIN_AC30 -to display_sign[0]
+set_location_assignment PIN_AF14 -to clk
+set_location_assignment PIN_AE12 -to switches[7]
+set_location_assignment PIN_AD10 -to switches[6]
+set_location_assignment PIN_AC9 -to switches[5]
+set_location_assignment PIN_AE11 -to switches[4]
+set_location_assignment PIN_AD12 -to switches[3]
+set_location_assignment PIN_AD11 -to switches[2]
+set_location_assignment PIN_AF10 -to switches[1]
+set_location_assignment PIN_AF9 -to switches[0]
+set_location_assignment PIN_AA14 -to reset
+set_location_assignment PIN_Y19 -to result[3]
+set_location_assignment PIN_V16 -to flags[3]
+set_location_assignment PIN_W16 -to flags[2]
+set_location_assignment PIN_V17 -to flags[1]
+set_location_assignment PIN_V18 -to flags[0]
+set_location_assignment PIN_Y21 -to result[0]
+set_location_assignment PIN_W21 -to result[1]
+set_location_assignment PIN_W20 -to result[2]
+set_location_assignment PIN_AB12 -to change_switches
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE test/tb_bin_converte.sv
+set_global_assignment -name SYSTEMVERILOG_FILE src/display_sign.sv
+set_global_assignment -name SYSTEMVERILOG_FILE src/bin_to_bcd_decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE src/bin_converter.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/top_module.sv
 set_global_assignment -name SYSTEMVERILOG_FILE src/alu.sv
 set_global_assignment -name SYSTEMVERILOG_FILE test/alu_tb.sv
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

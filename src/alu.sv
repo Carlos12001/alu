@@ -11,7 +11,7 @@ module alu #(parameter WIDTH = 4)(
 
   logic [WIDTH:0] temp;
   logic carry;
-  logic [2*WIDTH-1:0] overflow;
+  logic overflow;
 
   // Operacion seleccionada por el código de control
   always_comb begin
@@ -46,8 +46,8 @@ module alu #(parameter WIDTH = 4)(
     result = temp[WIDTH-1:0];
     carry = temp[WIDTH];
 	 
-	 if (uc == 4'b0010) begin
-		overflow = ((a*b) > 31) ;
+    if (uc == 4'b0010) begin
+		  overflow = ((a*b) > 31) ;
     end else begin
       overflow = 0;
     end
