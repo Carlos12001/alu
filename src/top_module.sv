@@ -14,10 +14,10 @@ module top_module(
 	 
 	// Instancia de la ALU
 	alu #(4) dut(.a(a), .b(b), .uc(uc), .result(leds_result), 
-                .n(leds_flags[3]),
-					 .z(leds_flags[2]),
-					 .c(leds_flags[1]),
-					 .v(leds_flags[0]));
+                    .n(leds_flags[3]),
+				    .z(leds_flags[2]),
+				    .c(leds_flags[1]),
+				    .v(leds_flags[0]));
 
     
 
