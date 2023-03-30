@@ -8,7 +8,7 @@ module tb_bin_converter;
 
     // Instancia del módulo bin_converter
     bin_converter my_bin_converter (
-        .bin_6(bin_6),
+        .bin(bin_6),
         .bin_unit(bin_unit),
         .bin_ten(bin_ten)
     );

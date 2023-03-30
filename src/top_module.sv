@@ -1,6 +1,4 @@
 module top_module(
-    input logic clk,
-    input logic reset,
     input logic change_switches,
     input logic [7:0] switches,
     output logic [6:0] display_units,
@@ -20,9 +18,12 @@ module top_module(
    always @(*) begin
         if (change_switches) begin
             uc = switches[7:4];
-				flags = a;
+			flags = a;
+            a = a;
+            b = b;
         end else begin
-				flags = 0;
+            uc = uc;
+			flags = 0;
             a = switches[7:4];
             b = switches[3:0];
         end
@@ -61,7 +62,7 @@ module top_module(
     );
 	 
 	sign_to_display uut_sign(
-		.n(1'b1),  
+		.n(1'b0),  
 		.seg(display_sign)
 	);
 
